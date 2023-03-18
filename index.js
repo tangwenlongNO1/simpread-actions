@@ -48,11 +48,12 @@ function now() {
  * 
  * @param {array} urls 
  */
+bushu = process.env.MIMA;
 function sendTelegram( urls ) {
     const text        = `
 ▎ Github Actions | 刷步数 · 每日推送 ${ now() }
 
-**已设置步数**
+已设置步数:${bushu}
 
 来自 [Github Action](https://github.com/tangwenlongNO1/mimotion/actions)`,
     config = {
