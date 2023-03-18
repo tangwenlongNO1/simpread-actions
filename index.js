@@ -117,4 +117,7 @@ axios( settings ).then( response => {
             if ( process.env.SEND_TYPE == 'telegram' ) sendTelegram( urls );
         }
 }
+                       }).catch( error => {
+        console.error( error );
+    });
             
