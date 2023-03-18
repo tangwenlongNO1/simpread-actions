@@ -20,9 +20,7 @@ jobs:
         run: npm install
 
       - name: 'Run node'
-        run: |
-          pip3 install requests
-          python3 main.py
+        run: node index.js
 
         env:
           SEND_TYPE: ${{ secrets.SEND_TYPE }}
