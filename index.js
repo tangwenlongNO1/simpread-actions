@@ -5,11 +5,11 @@ const axios = require( 'axios' );
  * 
  * @return {string} return now, e.g. 2017年04月03日 11:43:53
  */
-// function now() {
-//     const date   = new Date(),
-//           format = value => value = value < 10 ? '0' + value : value;
-//     return date.getFullYear() + '/' + format( date.getUTCMonth() + 1 ) + '/' + format( date.getUTCDate() );
-// }
+function now() {
+    const date   = new Date(),
+          format = value => value = value < 10 ? '0' + value : value;
+    return date.getFullYear() + '/' + format( date.getUTCMonth() + 1 ) + '/' + format( date.getUTCDate() );
+}
 
 /**
  * Get Simpread Unreader Daily
