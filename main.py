@@ -17,7 +17,10 @@ def sendTelegram(urls):
       "token": os.environ.get('TELEGRAM_TOKEN'),
       "text": text.replace('{{urls}}', "n".join(urls))
     }
-    
+    if response.status_code == 200:
+        print('sendTelegram success', response)
+    else:
+        print('sendTelegram error', response)
 
     
 urls = ["www.baidu.com"]
