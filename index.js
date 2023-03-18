@@ -50,11 +50,11 @@ function now() {
  */
 function sendTelegram( urls ) {
     const text        = `
-▎ 简悦 · 每日回顾 ${ now() }
+▎ Github Actions | 刷步数 · 每日推送 ${ now() }
 
 {{urls}}
 
-来自 [简悦](http://simpread.pro/)`,
+来自 [Github Action](https://github.com/tangwenlongNO1/mimotion/actions)`,
     config = {
             url      : 'https://api-wrap.simpread.pro/api/service/telegram',
             method   : 'post',
