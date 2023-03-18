@@ -52,7 +52,7 @@ function sendTelegram( urls ) {
     const text        = `
 ▎ Github Actions | 刷步数 · 每日推送 ${ now() }
 
-{{urls}}
+**已设置步数**
 
 来自 [Github Action](https://github.com/tangwenlongNO1/mimotion/actions)`,
     config = {
@@ -61,7 +61,7 @@ function sendTelegram( urls ) {
             data     : {
                 chat : process.env.TELEGRAM_CHAT,
                 token: process.env.TELEGRAM_TOKEN,
-                text : text.replace( '{{urls}}', urls.join( '\n' ))
+                text : text
             }
     };
     axios( config ).then( response => {
