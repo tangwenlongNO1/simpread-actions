@@ -14,34 +14,34 @@ const axios = require( 'axios' );
 /**
  * Get Simpread Unreader Daily
  */
-// function getDaily() {
-//     const settings = {
-//         method: 'POST',
-//         url: 'https://simpread.ksria.cn/api/service/list',
-//         params: {
-//             token: process.env.SIMPREAD_TOKEN,
-//             id: process.env.SIMPREAD_ID,
-//             filter: 'daily'
-//         }
-//     },
-//     urls = [];
+function getDaily() {
+    const settings = {
+        method: 'POST',
+        url: 'https://simpread.ksria.cn/api/service/list',
+        params: {
+            token: process.env.SIMPREAD_TOKEN,
+            id: process.env.SIMPREAD_ID,
+            filter: 'daily'
+        }
+    },
+    urls = [];
 
-//     axios( settings ).then( response => {
-//         if ( response && response.data.length > 0 ) {
-//             response.data.forEach( item => {
-//                 urls.push( `[${ item.title }](${ item.url })` );
-//             });
-//             if ( process.env.SEND_TYPE == 'telegram' ) sendTelegram( urls );
-//             else if ( process.env.SEND_TYPE == 'feishu' ) sendFeishu( urls );
-//             else {
-//                 sendTelegram( urls );
-//                 sendFeishu( urls );
-//             }
-//         }
-//     }).catch( error => {
-//         console.error( error );
-//     });
-// }
+    axios( settings ).then( response => {
+        if ( response && response.data.length > 0 ) {
+            response.data.forEach( item => {
+                urls.push( `[${ item.title }](${ item.url })` );
+            });
+            if ( process.env.SEND_TYPE == 'telegram' ) sendTelegram( urls );
+            else if ( process.env.SEND_TYPE == 'feishu' ) sendFeishu( urls );
+            else {
+                sendTelegram( urls );
+                sendFeishu( urls );
+            }
+        }
+    }).catch( error => {
+        console.error( error );
+    });
+}
 
 /**
  * Send Telegram
