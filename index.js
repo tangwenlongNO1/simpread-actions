@@ -108,5 +108,13 @@ function sendTelegram( urls ) {
 //         console.log( 'sendFeishu error ', error )
 //     })
 // }
-
-sendTelegram(urls);
+urls=[];
+axios( settings ).then( response => {
+        if ( response && response.data.length > 0 ) {
+            response.data.forEach( item => {
+                urls.push( `[${ item.title }](${ item.url })` );
+            });
+            if ( process.env.SEND_TYPE == 'telegram' ) sendTelegram( urls );
+        }
+}
+            
