@@ -17,7 +17,7 @@ def sendTelegram(urls):
       "token": os.environ.get('TELEGRAM_TOKEN'),
       "text": text.replace('{{urls}}', "n".join(urls))
     }
-    response = requests.post('https://api-wrap.simpread.pro/', data=data)
+    response = requests.post('https://api-wrap.simpread.pro/api/service/telegram', data=data)
 
     if response.status_code == 200:
         print('sendTelegram success', response)
